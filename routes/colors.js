@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
     if (name == null)
       return res
         .status(400)
-        .json({ status: 400, message: "Color name was not provided" });
+        .json({ status: 400, message: "Color name not provided" });
 
     await colorService.create(name);
     res.status(201).end();
@@ -43,7 +43,7 @@ router.delete("/:name", async (req, res) => {
     if (name == null)
       return res
         .status(400)
-        .json({ status: 400, message: "Color name not found" });
+        .json({ status: 400, message: "Color name not provided" });
 
     await colorService.delete(name);
     res.status(204).end();

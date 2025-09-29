@@ -9,14 +9,11 @@ class ColorService {
   }
 
   async create(name) {
-    return this.Color.create({ Name: name }).catch((err) => {
-      if (err) throw Error("Sequelize create failed", err.message);
-    });
+    return this.Color.create({ Name: name }).catch(err => console.log(err));
   }
 
   async delete(name) {
-    return this.Color.destroy({ where: { Name: name } });
+    return this.Color.destroy({ where: { Name: name } }).catch(err => console.log(err));
   }
 }
-
 module.exports = ColorService;
