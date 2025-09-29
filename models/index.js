@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
 const fs = require("fs"); // Used for reading directory files
 const path = require("path"); // Used for path manipulation
-const { logger, Logger } = require("sequelize/lib/utils/logger");
 const basename = path.basename(__filename); // Removes the absolute path part of the the __filename, leaving only index.js
 
 // Creates a new sequelize instance with configuration values from environment variables
