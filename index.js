@@ -2,9 +2,9 @@
 require('dotenv').config();
 
 // Configure express server
-
 const express = require('express');
 const app = express();
+const db = require('./models')
 
 // Middlewares
 app.use(express.json()) // Parses JSON requests
@@ -19,6 +19,8 @@ const indexRouter = require('./routes/index.js')
 app.use('/', indexRouter);
 
 // Server listens to port 3000
+db.sequelize.sync( { force: false, alter: true })
+
 app.listen(process.env.API_PORT || 5000, (err) => {
     if(err) {
         console.log('Express server failed to start', err.message)
