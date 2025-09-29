@@ -18,9 +18,10 @@ app.set('views', 'views'); // Sets the views directory to views
 const indexRouter = require('./routes/index.js')
 app.use('/', indexRouter);
 
-// Server listens to port 3000
+// Configures and synchornizes the database before start
 db.sequelize.sync( { force: false, alter: true })
 
+// Server listens to port 3000
 app.listen(process.env.API_PORT || 5000, (err) => {
     if(err) {
         console.log('Express server failed to start', err.message)
