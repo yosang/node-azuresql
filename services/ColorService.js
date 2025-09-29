@@ -4,8 +4,12 @@ class ColorService {
         this.Color = db.Color;
     }
 
-    async getAll () {
+    async getAll() {
         return this.Color.findAll()
+    }
+
+    async create(name) {
+        return this.Color.insertOne()
     }
 }
 
