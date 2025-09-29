@@ -36,16 +36,17 @@ router.post("/", async (req, res) => {
   }
 });
 
+// TODO: We are using a DELETE method here
+  // could also use a POST and send the name in the body and validate body property instead
 router.delete("/:name", async (req, res) => {
   const name = req.params.name;
 
   try {
-    if (name == null)
-      return res
-        .status(400)
-        .json({ status: 400, message: "Color name not provided" });
 
-    await colorService.delete(name);
+    const result = await colorService.delete(name);
+
+    if(result === 0) return res.status(400).json({status:400, error:'Color name is invalid'});
+
     res.status(204).end();
   } catch (err) {
     console.log("Unable to delete color", err);

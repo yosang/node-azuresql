@@ -6,5 +6,5 @@ curl -X POST http://localhost:3000/colors --header 'Content-Type: application/js
 # DELETE /colors/:name
 
 ```sh
-curl -X DELETE http://localhost:3000/colors/White
+curl -X DELETE http://localhost:3000/colors/Red
 ```
