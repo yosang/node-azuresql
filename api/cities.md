@@ -3,7 +3,7 @@
 curl -X POST http://localhost:3000/cities --header 'Content-Type: application/json' --data '{ "name":"Tromsø", "country":"Norway" }'
 ```
 
-# DELETE /cities/:name
+# DELETE /cities/:id
 
 ```sh
 curl -X DELETE http://localhost:3000/cities/3
