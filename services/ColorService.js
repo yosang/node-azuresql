@@ -1,6 +1,5 @@
 class ColorService {
   constructor(db) {
-    this.client = db.sequelize;
     this.Color = db.Color;
   }
 
@@ -16,4 +15,4 @@ class ColorService {
     return this.Color.destroy({ where: { Name: name } }).catch(err => console.log(err));
   }
 }
-module.exports = ColorService;
+module.exports = new ColorService(require('../models'));

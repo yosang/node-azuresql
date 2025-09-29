@@ -1,8 +1,6 @@
 const router = require("express").Router();
-const db = require("../models");
 
-const ColorService = require("../services/ColorService");
-const colorService = new ColorService(db);
+const colorService = require('../services/ColorService');
 
 router.get("/", async (_, res) => {
   try {
