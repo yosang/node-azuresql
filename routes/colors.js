@@ -19,9 +19,7 @@ router.get("/", async (_, res) => {
 
 router.post("/", async (req, res) => {
   const { name } = req.body;
-  
-  console.log(req.body);
-  
+
   try {
     if (name == null)
       return res
@@ -32,6 +30,25 @@ router.post("/", async (req, res) => {
     res.status(201).end();
   } catch (err) {
     console.log("Unable to create color", err);
+    res
+      .status(500)
+      .json({ status: 500, message: "Internal Error", error: err.message });
+  }
+});
+
+router.delete("/:name", async (req, res) => {
+  const name = req.params.name;
+
+  try {
+    if (name == null)
+      return res
+        .status(400)
+        .json({ status: 400, message: "Color name not found" });
+
+    await colorService.delete(name);
+    res.status(204).end();
+  } catch (err) {
+    console.log("Unable to delete color", err);
     res
       .status(500)
       .json({ status: 500, message: "Internal Error", error: err.message });
