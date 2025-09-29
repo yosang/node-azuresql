@@ -9,7 +9,7 @@ class ColorService {
     }
 
     async create(name) {
-        return this.Color.insertOne()
+        return this.Color.create( { Name: name}).catch(err => { if(err) throw Error('Sequelize create failed', err.message)})
     }
 }
 
