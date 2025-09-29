@@ -16,8 +16,11 @@ app.set("views", "views"); // Sets the views directory to views
 // Routes
 const indexRouter = require("./routes/index.js");
 const colorsRouter = require("./routes/colors.js");
+const citiesRouter = require('./routes/cities.js');
+
 app.use("/", indexRouter);
 app.use("/colors", colorsRouter);
+app.use('/cities', citiesRouter);
 
 // Configures and synchornizes the database before start
 db.sequelize.sync({ force: false, alter: true });

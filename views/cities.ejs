@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cities</title>
+</head>
+<body>
+    <h1>List of cities</h1>
+    <ul>
+        <h2>City name:</h2>
+        <% cities.forEach(city => { %>
+            <li style="list-style: none;"><%= city.id %>, <%= city.Name %>, <%= city.Country %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
