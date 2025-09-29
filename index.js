@@ -1,13 +1,15 @@
 // Configure env variables
 require("dotenv").config();
 
-// Configure express server
+// Configure server-wide modules
 const express = require("express");
+const morgan = require('morgan');
 const app = express();
 const db = require("./models");
 
 // Middlewares
 app.use(express.json()); // Parses JSON requests
+app.use(morgan('dev'));
 
 // EJS engine
 app.set("view engine", "ejs"); // Sets the view engine to ejs
