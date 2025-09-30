@@ -1,17 +1,17 @@
 # Azure REST API
-Simple REST API built with nodejs, express, sequelize and microsoft sql driver.
+REST API built with nodejs, express, sequelize and microsoft sql driver.
 
-The application is connected to an Azure SQL Managed Instance on the cloud.
+The application is connected to a Azure SQL Managed Instance on the cloud.
 
 # Install
 Clone the repo:
 ```sh
-git clone https://github.com/yosang/node-azuresql
+git clone https://github.com/yosang/azure-restapi
 ```
 
 Move into the directory and install dependencies
 ```sh
-cd node-azuresql
+cd azure-restapi
 npm install
 ```
 
